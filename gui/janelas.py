@@ -1,13 +1,9 @@
-from gui.TelaCliente import TelaClientes
 from gui.quadros import *
 from gui.telaCadastro import TelaCadastro
-from gui.telaConfiguracoes import TelaConfiguracoes
-from gui.telaPaineis import TelaPaineis
-from gui.telaPerfil import TelaPerfil
-from gui.telaPessoas import TelaPessoas
 from gui.telaProdutos import TelaProdutos
 from gui.telaVenda import TelaVendas
 from gui.telasMenus import MenuLateral, MenuPrincipal
+from gui.TelaCliente import *
 
 class QuadroPrincipal(ctk.CTkFrame):
     # classe que controla o fluxo de janelas da aplicação
@@ -19,8 +15,7 @@ class QuadroPrincipal(ctk.CTkFrame):
         self.telaMenuPrincipal()
 
     def menuLateral(self):
-        comandos = [self.abrirHome, self.abrirDasboard, self.abrirAdicionarPessoas, self.abrirConfiguracoes,
-                    self.abrirPerfil]
+        comandos = [self.abrirHome]
         self.frameLateral = MenuLateral(self, self.modo, comandos)
 
     def telaMenuPrincipal(self):
@@ -43,11 +38,6 @@ class QuadroPrincipal(ctk.CTkFrame):
     def abrirClientes(self):
         self.framePrincipal.esquecerFrame()
         self.frameClientes = TelaClientes(self, self.modo)
-
-    def abrirPesquisa(self):
-        self.telaPesquisa = TelaPopUp(self, self.modo)
-        self.telaPesquisa.gerarVisualizacao(self.gerarPdf, colunas['Clientes'])
-        self.telaPesquisa.gerarVisualPesquisa()
 
     def abrirHome(self):
         self.telaMenuPrincipal()

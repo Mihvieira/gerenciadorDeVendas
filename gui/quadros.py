@@ -40,11 +40,6 @@ class Quadro(ctk.CTkFrame):
     def getAllValues(self, lista):
         resultado = [entry.getDados() for entry in lista]
         return resultado
-
-    def gerarPdf(self):
-        # TODO imprimir tudo ou selecionado
-        # TODO fazer primeiro imprimir tudo
-        pass
     
     def limparEntrada(self, lista):
         for i in lista:
@@ -82,8 +77,6 @@ class TelaPopUp(ctk.CTkToplevel):
     def gerarVisualizacao(self, comando, colunas):
         self.tree = Treeview(self, colunas, 100, 91, 80)
         self.tree.posicionarNoCentro()
-        self.btnGerarPdf = Botao(self, 'Gerar Pdf', comando, self.modo["corBotoesPadrao"])
-        self.btnGerarPdf.posicionarBotaoRel(0.5, 0.8)
 
     def gerarVisualPesquisa(self):
         self.tree.headings()

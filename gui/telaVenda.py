@@ -29,10 +29,8 @@ class TelaVendas(Quadro):
         self.tree = Treeview(self, self.colunas, 100, 40, 70)
         self.tree.tamanhoColuna('id', 20)
         self.tree.tamanhoColuna('idCl', 50)
-        self.tree.tamanhoColuna('idUs', 50)
         self.tree.tamanhoColuna('idPag', 50)
         self.tree.tamanhoColuna('idProd', 50)
-        self.tree.tamanhoColuna('Total', 50)
         self.tree.altura(7)
         self.tree.gerarSroolvbarY()
         self.tree.configurarBarra(710,70)
@@ -42,14 +40,11 @@ class TelaVendas(Quadro):
         self.btnEditar.posicionarBotao(750, 70)
         self.btnCancelar = Botao(self, 'Cancelar', self.cancelar, self.modo["corBotaoAlerta"])
         self.btnCancelar.posicionarBotao(750, 114)
-        self.btnGerarPdf = Botao(self, 'Gerar PDF', self.gerarPdf, self.modo["corBotoesPadrao"])
-        self.btnGerarPdf.posicionarBotao(750, 158)
         self.btnIncluirNovo = Botao(self, 'Incluir Novo', self.incluirNovo, self.modo["corBotoesPadrao"])
         self.btnIncluirNovo.botaoDestaque()
         self.btnIncluirNovo.posicionarBotao(100, 250)
         self.btnConsultarProd = Botao(self, 'Ver Itens', self.editar, self.modo["corBotoesPadrao"])
         self.btnConsultarProd.posicionarBotao(750, 202)
-        self.btnGerarPdf.posicionarBotao(750, 158)
     
     def buscar(self):
         try:
@@ -111,9 +106,6 @@ class TelaVendas(Quadro):
     def incluirNovo(self):
         self.destroy()
         cadastro = TelaCadastro(self.master, self.modo)
-        
-    def gerarPdf(self):
-        pass
     
     def verItensVendidos(self, idVenda):
         consulta = self.itemVendido.buscar(idVenda, 'idVenda')

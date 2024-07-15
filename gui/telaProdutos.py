@@ -31,8 +31,6 @@ class TelaProdutos(Quadro):
         self.btnEditar.posicionarBotao(700, 70)
         self.btnExcluirProdutoT = Botao(self, 'Excluir', self.excluir, self.modo["corBotaoAlerta"])
         self.btnExcluirProdutoT.posicionarBotao(700, 114)
-        self.btnGerarPdf = Botao(self, 'Gerar PDF', self.gerarPdf, self.modo["corBotoesPadrao"])
-        self.btnGerarPdf.posicionarBotao(700, 158)
         self.btnIncluirNovo = Botao(self, 'Incluir Novo', self.incluirNovo, self.modo["corBotoesPadrao"])
         self.btnIncluirNovo.botaoDestaque()
         self.btnIncluirNovo.posicionarBotao(100, 250)
@@ -127,9 +125,6 @@ class TelaProdutos(Quadro):
             messagebox.showinfo('Sucesso!', 'Dados excluídos.')
         else:
             messagebox.showerror("ERRO", f"{salvar}")
-        
-    def gerarPdf(self):
-        pass
     
     def atualizar(self):
         self.criar()

@@ -34,8 +34,6 @@ class TelaClientes(Quadro):
         self.btnEditar.posicionarBotao(300, 250)
         self.btnExcluirProdutoT = Botao(self, 'Excluir', self.excluir, self.modo["corBotaoAlerta"])
         self.btnExcluirProdutoT.posicionarBotao(400, 250)
-        self.btnGerarPdf = Botao(self, 'Gerar PDF', self.gerarPdf, self.modo["corBotoesPadrao"])
-        self.btnGerarPdf.posicionarBotao(500, 250)
         self.btnIncluirNovo = Botao(self, 'Incluir Novo', self.incluirNovo, self.modo["corBotoesPadrao"])
         self.btnIncluirNovo.botaoDestaque()
         self.btnIncluirNovo.posicionarBotao(20, 250)
@@ -199,8 +197,6 @@ class TelaClientes(Quadro):
         else:
             messagebox.showerror("ERRO", f"{deletar}")
             
-    def gerarPdf(self):
-        pass
     
     def incluirNovo(self):
         self.gerarBlocoEdicao()

@@ -108,9 +108,6 @@ class TelaCadastro(Quadro):
         self.btnSalvar = Botao(self, 'Salvar', self.salvar, self.modo["corBotaoSave"])
         self.btnSalvar.botaoDestaque()
         self.btnSalvar.posicionarBotao(231, 450)
-        self.btnGerarPedf = Botao(self, 'Gerar PDF', self.gerarPdf, self.modo['corBotoesPadrao'])
-        self.btnGerarPedf.botaoDestaque()
-        self.btnGerarPedf.posicionarBotao(497, 450)
         # linha 2
         self.inputNome = EntradaDados(self)
         self.inputTelefone = EntradaDados(self)
@@ -381,9 +378,6 @@ class TelaCadastro(Quadro):
         for i, item in enumerate(self.dadosProduto):
             if item[0] == idToRemove:
                 self.dadosProduto.pop(i)
-
-    def gerarPdf(self):
-        pass
 
     def buscarProduto(self, *args):
         try:
