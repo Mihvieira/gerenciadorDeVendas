@@ -19,7 +19,7 @@ class Venda:
         self.status = status
         
     def cadastrar(self):
-        query = (f'INSERT INTO {self.tabela} (idCliente, dataHora, status) VALUES ('f'"{self.idCliente}", "{self.data}", "{self.status}")')
+        query = f'INSERT INTO {self.tabela} (idCliente, dataHora, status) VALUES ('f'"{self.idCliente}", "{self.data}", "{self.status}")'
         return self.bd.inserirDados(query)
 
     def editar(self):

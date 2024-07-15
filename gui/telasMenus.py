@@ -1,3 +1,5 @@
+from tkinter import messagebox
+
 from gui.quadros import *
 from gui.treeview import *
 from backend.vendas import *

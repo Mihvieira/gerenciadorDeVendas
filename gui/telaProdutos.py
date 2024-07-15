@@ -102,40 +102,55 @@ class TelaProdutos(Quadro):
             messagebox.showerror("ERRO", f"{salvar}")
                 
     def editar(self):
-        dados = self.tree.itemSelecionado()
-        self.produto.setId(dados[0])
-        self.gerarBlocoEdicao()
-        self.btnSalvar.place_forget()
-        self.btnAtualizar = Botao(self.frameEdicao, 'Atualizar', self.atualizar, self.modo["corBotoesPadrao"])
-        self.btnAtualizar.botaoDestaque()
-        self.btnAtualizar.posicionarBotao(348, self.frameEdicao.yDist[3])
-        index = 1
-        for i in self.inputs:
-            i.entradaComDados(dados[index])
-            index +=1
-        self.tree.deletarItem()
-        self.posicionarEntradaEdicao()
+        try:
+            dados = self.tree.itemSelecionado()
+            self.produto.setId(dados[0])
+            self.gerarBlocoEdicao()
+            self.btnSalvar.place_forget()
+            self.btnAtualizar = Botao(self.frameEdicao, 'Atualizar', self.atualizar, self.modo["corBotoesPadrao"])
+            self.btnAtualizar.botaoDestaque()
+            self.btnAtualizar.posicionarBotao(348, self.frameEdicao.yDist[3])
+            index = 1
+            for i in self.inputs:
+                i.entradaComDados(dados[index])
+                index +=1
+            self.tree.deletarItem()
+            self.posicionarEntradaEdicao()
+        except TypeError:
+            messagebox.showerror('Erro', 'Nenhum item selecionado')
+        except Exception as e:
+            messagebox.showerror('Erro ao editar', f'{e}')
 
     def excluir(self):
-        dados = self.tree.itemSelecionado()
-        self.produto.setId(dados[0])
-        deletar = self.produto.excluir()
-        if deletar == 'Dados inseridos com sucesso':
-            self.tree.deletarItem()
-            messagebox.showinfo('Sucesso!', 'Dados excluídos.')
-        else:
-            messagebox.showerror("ERRO", f"{salvar}")
+        try:
+            dados = self.tree.itemSelecionado()
+            self.produto.setId(dados[0])
+            deletar = self.produto.excluir()
+            if deletar == 'Dados inseridos com sucesso':
+                self.tree.deletarItem()
+                messagebox.showinfo('Sucesso!', 'Dados excluídos.')
+            else:
+                messagebox.showerror("ERRO", f"{deletar}")
+        except TypeError:
+            messagebox.showerror('Erro', 'Nenhum item selecionado')
+        except Exception as e:
+            messagebox.showerror('Erro ao excluir', f'{e}')
     
     def atualizar(self):
-        self.criar()
-        atualizar = self.produto.editar()
-        if atualizar == 'Dados inseridos com sucesso':
-            messagebox.showinfo('Sucesso!', 'Dados alterados.')
-            self.limparEntrada(self.inputs)
-            self.frameEdicao.place_forget()
-            self.tree.inserirDados(self.produto.verAtributos())
-        else:
-            messagebox.showerror("ERRO", f"{salvar}")
+        try:
+            self.criar()
+            atualizar = self.produto.editar()
+            if atualizar == 'Dados inseridos com sucesso':
+                messagebox.showinfo('Sucesso!', 'Dados alterados.')
+                self.limparEntrada(self.inputs)
+                self.frameEdicao.place_forget()
+                self.tree.inserirDados(self.produto.verAtributos())
+            else:
+                messagebox.showerror("ERRO", f"{atualizar}")
+        except TypeError:
+            messagebox.showerror('Erro', 'Nenhum item selecionado')
+        except Exception as e:
+            messagebox.showerror('Erro ao atualizar', f'{e}')
     
     def incluirNovo(self):
         self.gerarBlocoEdicao()

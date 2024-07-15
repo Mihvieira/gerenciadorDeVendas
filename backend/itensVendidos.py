@@ -39,7 +39,7 @@ class ItemVendido:
         return resultado
 
     def calcularValorTotal(self):
-        return self.precoUnitario * self.qtd
+        return float(self.precoUnitario) * float(self.qtd)
     
     def setIdVenda(self, idVenda):
         self.idVenda = idVenda

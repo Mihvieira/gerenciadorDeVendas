@@ -17,7 +17,7 @@ class Produto:
         self.total = self.preco-(self.preco*(self.desconto/100))
 
     def cadastrar(self):
-        query = (f'INSERT INTO {self.tabela} (nome, descricao, preco, estoque, desconto, total) VALUES ("{self.nome}", "{self.descricao}", "{self.preco}", "{self.estoque}", "{self.desconto}", "{self.total}")')
+        query = f'INSERT INTO {self.tabela} (nome, descricao, preco, estoque, desconto, total) VALUES ("{self.nome}", "{self.descricao}", "{self.preco}", "{self.estoque}", "{self.desconto}", "{self.total}")'
         return self.bd.inserirDados(query)
 
     def editar(self):

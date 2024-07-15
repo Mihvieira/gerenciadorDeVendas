@@ -2,7 +2,7 @@ import sqlite3
 import sys
 
 class BancoDeDados:
-    #Define condições gerais do BD
+    # Define condições gerais do BD
     def __init__(self):
         self.criarTabelas()
 
@@ -110,7 +110,8 @@ class BancoDeDados:
             );
             ''')
             self.con.commit()
-    
+
+
     def criarTabelaPagamento(self):
         with self.con:
             self.cursor.execute('''
@@ -124,7 +125,4 @@ class BancoDeDados:
             );
             ''')
             self.con.commit()
-    
-    
-    
     

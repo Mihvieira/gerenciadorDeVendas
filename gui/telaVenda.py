@@ -69,20 +69,23 @@ class TelaVendas(Quadro):
             self.entrada.limpar()
 
     def editar(self):
-        #pegar dados da treeview
-        dados = self.tree.itemSelecionado()
-        idCliente = dados[1]
-        idVenda = dados[0]
-        idPagamento = dados[5]
-        dadosPagamento = dados[-3:]
-        dadosCliente = self.verCliente(idCliente) #lista com tupla
-        dadosIvendidos = self.verItensVendidos(idVenda)
-        self.place_forget()
-        cadastro = TelaCadastro(self.master, self.modo)
-        cadastro.iniciarTelaComDados(dadosCliente, self.listaCadastro, dadosPagamento, idVenda, idPagamento)
+        try:
+            dados = self.tree.itemSelecionado()
+            idCliente = dados[1]
+            idVenda = dados[0]
+            idPagamento = dados[5]
+            dadosPagamento = dados[-3:]
+            dadosCliente = self.verCliente(idCliente)
+            dadosIvendidos = self.verItensVendidos(idVenda)
+            self.place_forget()
+            cadastro = TelaCadastro(self.master, self.modo)
+            cadastro.iniciarTelaComDados(dadosCliente, self.listaCadastro, dadosPagamento, idVenda, idPagamento)
+        except TypeError:
+            messagebox.showerror('Erro', 'Nenhum item selecionado')
+        except Exception as e:
+            messagebox.showerror('Erro ao editar', f'{e}')
     
     def cancelar(self):
-        # TODO : permite cancelar a compra mais de uma vez, o que pode atualizar o estoque de forma errada
         alerta = messagebox.askokcancel('Alerta: Essa operação altera os dados', 'deseja prosseguir?')
         if alerta is True:
             dados = self.tree.itemSelecionado()
@@ -113,12 +116,11 @@ class TelaVendas(Quadro):
         return consulta    
     
     def verProdutos(self, idsProduto):
-        # TODO
         self.produto = Produto()
         self.verProdutos = []
         for i in range(len(idsProduto)):
-            verProdutos.append(self.produto.buscar(idsProduto[i], "idProduto")[1])
-        return verProdutos
+            self.verProdutos.append(self.produto.buscar(idsProduto[i], "idProduto")[1])
+        return self.verProdutos
     
     def criarListaCadastro(self, lista):
         self.produto = Produto()
@@ -129,7 +131,6 @@ class TelaVendas(Quadro):
             self.listaCadastro.append(novaLista)
     
     def verCliente(self, idCliente):
-        # TODO
         self.cliente = Cliente()
         self.cliente.setId(idCliente)
         return self.cliente.buscar(idCliente, 'idCliente')
