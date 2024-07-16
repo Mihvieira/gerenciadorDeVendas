@@ -26,7 +26,7 @@ modoEscuro = {
     "corDeFundo": "#444444"
 }
 
-caminhoImagens = r"/home/mih/Documentos/app-vendas/appVendasPython/imagens/icons/"
+caminhoImagens = r"imagens/icons/"
 
 colunas = {
     'Clientes': ['id', 'Cpf', 'Cnpj', 'Nome', 'DtNasc.', 'Telefone', 'E-mail', 'endereço'],
