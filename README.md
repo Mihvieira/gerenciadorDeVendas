@@ -4,6 +4,8 @@
 
 Este é um aplicativo desktop desenvolvido em Python com o objetivo de facilitar a gestão de vendas, produtos e clientes. Utilizando a biblioteca CustomTkinter para a interface gráfica e SQLite para o banco de dados, este aplicativo é uma solução eficiente e amigável para pequenas e médias empresas.
 
+![Captura de tela de 2024-07-16 17-28-45](https://github.com/user-attachments/assets/c3611828-b4d3-42f6-9def-d8fc30486530)
+
 ## Funcionalidades
 
 ### Menu Cadastro
@@ -30,7 +32,6 @@ Este é um aplicativo desktop desenvolvido em Python com o objetivo de facilitar
 - **Excluir Cliente**: Remover clientes do banco de dados.
 - **Visualizar Cliente**: Exibir detalhes dos clientes cadastrados.
 
-  
 ## Tecnologias Utilizadas
 - **Linguagem de Programação**: Python
 - **Interface Gráfica**: CustomTkinter
@@ -40,7 +41,7 @@ Este é um aplicativo desktop desenvolvido em Python com o objetivo de facilitar
 
 1. **Clone o repositório**:
     ```sh
-    git clone https://github.com/seuusuario/gerenciamento-de-vendas.git
+    git clone https://github.com/Mihvieira/gerenciadorDeVendas.git
     ```
 
 2. **Entre no diretório do projeto**:
