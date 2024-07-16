@@ -87,4 +87,4 @@ Para dúvidas ou suporte, entre em contato através do nosso repositório no Git
 
 ## Licença:
 
-O Gerenciador de Vendas é licenciado sob a licença Apache. Para mais informações, consulte o arquivo de licença incluído no download do aplicativo.
+O Gerenciador de Vendas é licenciado sob a licença Apache. Para mais informações, consulte o arquivo de licença incluído no repositório do GitHub.
