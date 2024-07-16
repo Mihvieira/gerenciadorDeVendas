@@ -11,6 +11,8 @@ Este é um aplicativo desktop desenvolvido em Python com o objetivo de facilitar
 ### Menu Cadastro
 - **Cadastrar Cliente**: Permite adicionar novos clientes ao banco de dados.
 - **Gerar Venda**: Facilita a criação de novas vendas associadas a clientes.
+- Tela após a validação do CPF ou CNPJ:
+![Captura de tela de 2024-07-16 17-33-04](https://github.com/user-attachments/assets/99273faa-f839-4391-aa9f-b57b8af9bdff)
 
 ### Menu Produto
 - **Buscar Produto**: Pesquisar produtos existentes no banco de dados.
@@ -18,6 +20,8 @@ Este é um aplicativo desktop desenvolvido em Python com o objetivo de facilitar
 - **Editar Produto**: Atualizar informações de produtos existentes.
 - **Excluir Produto**: Remover produtos do banco de dados.
 - **Visualizar Produto**: Exibir detalhes dos produtos cadastrados.
+- Tela Produto, após clicar em Incluir Novo:
+![Captura de tela de 2024-07-16 17-32-44](https://github.com/user-attachments/assets/3f4bb2a4-b0fd-419a-9351-922ad5d81468)
 
 ### Menu Vendas
 - **Buscar Venda**: Localizar vendas registradas no sistema.
@@ -31,6 +35,8 @@ Este é um aplicativo desktop desenvolvido em Python com o objetivo de facilitar
 - **Editar Cliente**: Atualizar informações de clientes existentes.
 - **Excluir Cliente**: Remover clientes do banco de dados.
 - **Visualizar Cliente**: Exibir detalhes dos clientes cadastrados.
+- Tela Clientes após clicar em Incluir Novo:
+![Captura de tela de 2024-07-16 17-32-12](https://github.com/user-attachments/assets/8c8bb3e8-b77f-4ab1-85fe-3a69e3ee9240)
 
 ## Tecnologias Utilizadas
 - **Linguagem de Programação**: Python
