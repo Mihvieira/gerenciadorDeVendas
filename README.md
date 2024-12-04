@@ -46,6 +46,22 @@ Este é um aplicativo desktop desenvolvido em Python com o objetivo de facilitar
 - **Interface Gráfica**: CustomTkinter
 - **Banco de Dados**: SQLite
 
+## Desafios do Projeto
+
+Durante o desenvolvimento deste projeto, enfrentei diversos desafios, incluindo:
+
+- **Gerenciamento de Estado**: Manter o estado sincronizado entre diferentes partes da aplicação foi um desafio significativo.
+- **Integração com Banco de Dados**: Garantir que as operações de CRUD (Create, Read, Update, Delete) fossem realizadas de maneira eficiente e segura.
+- **Interface Gráfica**: Criar uma interface gráfica intuitiva utilizando CustomTkinter.
+
+## Aprendizado
+
+Este projeto proporcionou um aprendizado valioso em várias áreas:
+
+- **Python**: Aprofundamos nosso conhecimento na linguagem Python, explorando suas bibliotecas e melhores práticas.
+- **Orientação a Objetos**: Implementamos conceitos de orientação a objetos para criar um código mais modular e reutilizável.
+- **CustomTkinter**: Aprendemos a utilizar a biblioteca CustomTkinter para desenvolver interfaces gráficas modernas e funcionais.
+
 ## Instalação
 
 1. **Clone o repositório**:
